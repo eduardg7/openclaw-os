@@ -127,26 +127,6 @@ volumes:
 
 ---
 
-## 🎮 Demo Screenshots
-
-<div align="center">
-
-#### Onboarding Wizard
-![Onboarding](https://via.placeholder.com/800x400/3b82f6/ffffff?text=OpenClaw+OS+Onboarding)
-
-#### Mission Control Dashboard
-![Dashboard](https://via.placeholder.com/800x400/1e293b/ffffff?text=Mission+Control+Dashboard)
-
-#### Agent Management
-![Agents](https://via.placeholder.com/800x400/1e293b/ffffff?text=Agent+Management)
-
-#### Settings Page
-![Settings](https://via.placeholder.com/800x400/ffffff/3b82f6?text=Settings+Configuration)
-
-</div>
-
----
-
 ## 🛠️ Development
 
 ```bash
