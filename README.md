@@ -120,8 +120,6 @@ volumes:
 | **TypeScript** | [![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue.svg)](https://www.typescriptlang.org/) |
 | **Next.js** | [![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black.svg)](https://nextjs.org/) |
 | **Security** | [![Security](https://img.shields.io/badge/Security-0%20Vulnerabilities-brightgreen.svg)](https://github.com/eduardg7/openclaw-os/security) |
-| **CI/CD** | [![CI](https://github.com/eduardg7/openclaw-os/workflows/CI/badge.svg)](https://github.com/eduardg7/openclaw-os/actions/workflows/ci.yml) |
-| **Docs** | [![Docs](https://github.com/eduardg7/openclaw-os/workflows/Deploy%20Docs/badge.svg)](https://github.com/eduardg7/openclaw-os/actions/workflows/docs.yml) |
 | **Stars** | [![GitHub Stars](https://img.shields.io/github/stars/eduardg7/openclaw-os?style=social)](https://github.com/eduardg7/openclaw-os/stargazers) |
 | **Forks** | [![GitHub Forks](https://img.shields.io/github/forks/eduardg7/openclaw-os?style=social)](https://github.com/eduardg7/openclaw-os/network/members) |
 
