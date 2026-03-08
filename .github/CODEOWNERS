@@ -1,0 +1,23 @@
+# CODEOWNERS - OpenClaw OS
+#
+# These owners will be requested to review pull requests
+# that affect their areas of the codebase.
+
+# Default owners for everything
+* @eduardg7
+
+# Backend / API
+/src/app/api/ @eduardg7
+
+# Frontend / UI
+/src/app/ @eduardg7
+/src/components/ @eduardg7
+
+# Configuration
+/package.json @eduardg7
+/tsconfig.json @eduardg7
+/.env* @eduardg7
+
+# Documentation
+/README.md @eduardg7
+/.github/ @eduardg7
