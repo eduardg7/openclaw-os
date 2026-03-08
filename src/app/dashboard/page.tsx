@@ -1,18 +1,46 @@
 import Link from 'next/link'
-import { Activity, Bot, CheckCircle2, Clock, ListTodo, TrendingUp } from 'lucide-react'
+import { Activity, Bot, CheckCircle2, Clock, ListTodo, TrendingUp, AlertCircle } from 'lucide-react'
+import { getOpenClawConfig } from '@/lib/openclaw-config'
 
 async function getStats() {
-  // TODO: Fetch from OpenClaw
+  const config = await getOpenClawConfig()
+
+  if (!config.configured) {
+    return null
+  }
+
+  // TODO: Fetch real stats from OpenClaw when API is ready
   return {
     agents: 0,
     activeTasks: 0,
     completedToday: 0,
-    avgResponseTime: '0ms',
+    avgResponseTime: '-',
+    configured: true,
   }
 }
 
 export default async function DashboardPage() {
   const stats = await getStats()
+
+  if (!stats) {
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
+        <div className="max-w-md w-full bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8 text-center">
+          <AlertCircle className="w-16 h-16 text-amber-500 mx-auto mb-4" />
+          <h1 className="text-2xl font-bold mb-2">Configuration Required</h1>
+          <p className="text-slate-600 dark:text-slate-300 mb-6">
+            OpenClaw OS needs to connect to your OpenClaw installation to display data.
+          </p>
+          <Link
+            href="/onboarding"
+            className="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          >
+            Configure Now
+          </Link>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
@@ -91,7 +119,7 @@ export default async function DashboardPage() {
             </div>
             <div className="space-y-3">
               <p className="text-slate-600 dark:text-slate-300 text-sm">
-                No recent activity. Connect your agents to see updates here.
+                No activity yet. Activity will appear here when your agents start working.
               </p>
             </div>
           </div>
@@ -104,23 +132,25 @@ export default async function DashboardPage() {
             </div>
             <div className="space-y-3">
               <Link
-                href="/agents/new"
-                className="block p-3 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600"
-              >
-                <span className="font-medium">Add New Agent</span>
-                <p className="text-sm text-slate-600 dark:text-slate-300">
-                  Configure a new AI agent
-                </p>
-              </Link>
-              <Link
                 href="/settings"
                 className="block p-3 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600"
               >
                 <span className="font-medium">Settings</span>
                 <p className="text-sm text-slate-600 dark:text-slate-300">
-                  Customize your OS configuration
+                  Configure your OS
                 </p>
               </Link>
+              <a
+                href="https://docs.openclaw.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-3 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600"
+              >
+                <span className="font-medium">Documentation</span>
+                <p className="text-sm text-slate-600 dark:text-slate-300">
+                  Learn how to use OpenClaw OS
+                </p>
+              </a>
             </div>
           </div>
         </div>
