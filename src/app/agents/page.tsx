@@ -1,13 +1,35 @@
 import Link from 'next/link'
-import { Bot, Plus } from 'lucide-react'
+import { Bot, Plus, AlertCircle } from 'lucide-react'
+import { getOpenClawConfig } from '@/lib/openclaw-config'
 
 async function getAgents() {
-  // TODO: Fetch from OpenClaw
+  // TODO: Fetch from OpenClaw when API is ready
   return []
 }
 
 export default async function AgentsPage() {
+  const config = await getOpenClawConfig()
   const agents = await getAgents()
+
+  if (!config.configured) {
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
+        <div className="max-w-md w-full bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8 text-center">
+          <AlertCircle className="w-16 h-16 text-amber-500 mx-auto mb-4" />
+          <h1 className="text-2xl font-bold mb-2">Configuration Required</h1>
+          <p className="text-slate-600 dark:text-slate-300 mb-6">
+            Configure OpenClaw OS to view and manage your agents.
+          </p>
+          <Link
+            href="/onboarding"
+            className="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          >
+            Configure Now
+          </Link>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
@@ -35,24 +57,17 @@ export default async function AgentsPage() {
           <p className="text-slate-600 dark:text-slate-300">
             Manage your AI agents
           </p>
-          <Link
-            href="/agents/new"
-            className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-          >
-            <Plus className="w-4 h-4" />
-            Add Agent
-          </Link>
         </div>
 
         {agents.length === 0 ? (
           <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-12 text-center">
             <Bot className="w-16 h-16 text-slate-300 dark:text-slate-600 mx-auto mb-4" />
-            <h3 className="text-lg font-medium mb-2">No agents yet</h3>
+            <h3 className="text-lg font-medium mb-2">No agents configured</h3>
             <p className="text-slate-600 dark:text-slate-300 mb-4">
-              Agents will be synced from your OpenClaw installation automatically.
+              Your agents from OpenClaw will appear here once configured.
             </p>
             <p className="text-sm text-slate-500 dark:text-slate-400">
-              Make sure you have agents configured in ~/.openclaw/agents/
+              Configure agents in your OpenClaw installation at <code className="bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded">~/.openclaw/agents/</code>
             </p>
           </div>
         ) : (
