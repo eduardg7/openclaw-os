@@ -249,7 +249,7 @@ export default function OnboardingPage() {
               <div className="text-center space-y-2">
                 <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">Detecting OpenClaw</h1>
                 <p className="text-slate-600 dark:text-slate-300">
-                  Let's find your OpenClaw installation to connect everything
+                  Let&apos;s find your OpenClaw installation to connect everything
                 </p>
               </div>
               
@@ -274,7 +274,7 @@ export default function OnboardingPage() {
                     <Monitor className="w-8 h-8 text-blue-500" />
                   </div>
                   <p className="text-slate-600 dark:text-slate-300">
-                    Click "Next" to automatically detect your OpenClaw installation.
+                    Click &quot;Next&quot; to automatically detect your OpenClaw installation.
                   </p>
                 </div>
               )}
@@ -355,7 +355,7 @@ export default function OnboardingPage() {
               </div>
               
               <div className="space-y-2">
-                <h1 className="text-4xl font-bold text-slate-800 dark:text-slate-100">You're All Set! 🎉</h1>
+                <h1 className="text-4xl font-bold text-slate-800 dark:text-slate-100">You&apos;re All Set! 🎉</h1>
                 <p className="text-xl text-slate-600 dark:text-slate-300">
                   OpenClaw OS is ready to supercharge your workflow
                 </p>

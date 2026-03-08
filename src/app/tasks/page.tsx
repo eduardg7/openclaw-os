@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ListTodo, AlertCircle } from 'lucide-react'
-import { getOpenClawConfig } from '@/lib/openclaw-config'
+import { getConfig } from '@/lib/onboarding'
 
 async function getTasks() {
   // TODO: Fetch from OpenClaw when API is ready
@@ -8,10 +8,10 @@ async function getTasks() {
 }
 
 export default async function TasksPage() {
-  const config = await getOpenClawConfig()
+  const config = await getConfig()
   const tasks = await getTasks()
 
-  if (!config.configured) {
+  if (!config || !config.onboardingComplete) {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
         <div className="max-w-md w-full bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8 text-center">

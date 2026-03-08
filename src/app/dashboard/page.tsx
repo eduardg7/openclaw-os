@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { Activity, Bot, CheckCircle2, Clock, ListTodo, TrendingUp, AlertCircle } from 'lucide-react'
-import { getOpenClawConfig } from '@/lib/openclaw-config'
+import { getConfig } from '@/lib/onboarding'
 
 async function getStats() {
-  const config = await getOpenClawConfig()
+  const config = await getConfig()
 
-  if (!config.configured) {
+  if (!config || !config.onboardingComplete) {
     return null
   }
 
