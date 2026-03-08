@@ -1,7 +1,21 @@
 {
   "name": "openclaw-os",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Personal Operating System for AI Agents",
+  "author": "Faintech Solutions",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eduardg7/openclaw-os.git"
+  },
+  "keywords": [
+    "openclaw",
+    "ai-agents",
+    "mission-control",
+    "operating-system",
+    "dashboard"
+  ],
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",

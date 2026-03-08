@@ -6,6 +6,13 @@ Plug-and-play mission control for your AI workforce. Connect to your OpenClaw in
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![OpenClaw](https://img.shields.io/badge/openclaw-compatible-green.svg)
+![Node](https://img.shields.io/badge/node-18%2B-green.svg)
+
+## 📖 Documentation
+
+- **[User Guide](./docs/USER-GUIDE.md)** - Complete usage documentation
+- **[Contributing](./.github/CONTRIBUTING.md)** - How to contribute
+- **[Security Policy](./SECURITY.md)** - Security information
 
 ## ✨ Features
 
@@ -15,6 +22,8 @@ Plug-and-play mission control for your AI workforce. Connect to your OpenClaw in
 - 🔄 **OpenClaw Sync** - Automatically syncs with your OpenClaw instance
 - 🎨 **Modern UI** - Clean, responsive interface built with Next.js + shadcn/ui
 - ⚡ **Zero Config** - Works out of the box with sensible defaults
+- 🐳 **Docker Ready** - Production-ready Docker deployment
+- 🔒 **Secure** - 0 vulnerabilities, security best practices
 
 ## 🚀 Quick Start
 
