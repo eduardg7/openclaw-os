@@ -1,15 +1,15 @@
 # OpenClaw OS - Production Docker Image
 # Multi-stage build for optimized image size
 
-# Stage 1: Dependencies
+# Stage 1: Dependencies (includes devDependencies for build)
 FROM node:20-alpine AS deps
 WORKDIR /app
 
 # Copy package files
 COPY package.json package-lock.json* ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Install ALL dependencies (including devDependencies for build)
+RUN npm ci
 
 # Stage 2: Builder
 FROM node:20-alpine AS builder
@@ -37,13 +37,12 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Copy built application
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
+# Copy built application (standalone mode)
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Set correct ownership
-RUN chown -R nextjs:nodejs /app
+# Create public directory (empty, for future static assets)
+RUN mkdir -p public && chown nextjs:nodejs public
 
 # Switch to non-root user
 USER nextjs
