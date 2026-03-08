@@ -5,7 +5,7 @@
  * Hierarchical hierarchical agent structure
  */
 
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, useEffect } from 'react'
 import ReactFlow, {
   Node,
   Edge,
@@ -15,8 +15,38 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
 } from 'reactflow'
+import dagre from '@dagrejs/dagre'
 import 'reactflow/dist/style.css'
-import { Bot, ChevronDown } from 'lucide-react'
+import { Bot } from 'lucide-react'
+
+// Dagre layout configuration
+const dagreGraph = new dagre.graphlib.Graph()
+dagreGraph.setDefaultEdgeLabel(() => ({}))
+
+const nodeWidth = 180
+const nodeHeight = 60
+
+function getLayoutedElements(nodes: Node[], edges: Edge[], direction = 'TB') {
+  dagreGraph.setGraph({ rankdir: direction, nodesep: 100, ranksep: 80 })
+  
+  nodes.forEach(node => dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight }))
+  edges.forEach(edge => dagreGraph.setEdge(edge.source, edge.target))
+  
+  dagre.layout(dagreGraph)
+  
+  const layoutedNodes = nodes.map(node => {
+    const nodeWithPosition = dagreGraph.node(node.id)
+    return {
+      ...node,
+      position: {
+        x: nodeWithPosition.x - nodeWidth / 2,
+        y: nodeWithPosition.y - nodeHeight / 2,
+      },
+    }
+  })
+  
+  return { nodes: layoutedNodes, edges }
+}
 
 interface Agent {
   id: string
@@ -88,6 +118,16 @@ export function OrgChart({ agents, onAgentClick }: OrgChartProps) {
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges)
+
+  // Apply dagre layout on mount
+  useEffect(() => {
+    const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
+      initialNodes,
+      initialEdges
+    )
+    setNodes(layoutedNodes)
+    setEdges(layoutedEdges)
+  }, [initialNodes, initialEdges, setNodes, setEdges])
 
   const onNodeClick = useCallback(
     (_: React.MouseEvent, node: Node) => {

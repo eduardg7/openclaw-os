@@ -84,11 +84,20 @@ export default async function DashboardPage() {
               <Link href="/agents" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
                 Agents
               </Link>
+              <Link href="/org-chart" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
+                Org Chart
+              </Link>
+              <Link href="/goals" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
+                Goals
+              </Link>
               <Link href="/tasks" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
                 Tasks
               </Link>
-              <Link href="/settings" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
-                Settings
+              <Link href="/costs" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
+                Costs
+              </Link>
+              <Link href="/companies" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
+                Companies
               </Link>
             </nav>
           </div>
