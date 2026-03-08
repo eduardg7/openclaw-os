@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://eduardg7.github.io/openclaw-os/
+    about: Check the documentation before opening an issue
+  - name: 💬 Discord Community
+    url: https://discord.com/invite/clawd
+    about: Join the community for help and discussions
+  - name: 🔒 Security Vulnerability
+    url: https://github.com/eduardg7/openclaw-os/security/policy
+    about: Please report security vulnerabilities privately
