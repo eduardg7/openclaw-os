@@ -1,29 +1,53 @@
 # OpenClaw OS
 
+<div align="center">
+
 **Personal Operating System for AI Agents**
 
-Plug-and-play mission control for your AI workforce. Connect to your OpenClaw instance and manage agents, tasks, and projects in one unified dashboard.
+Plug-and-play mission control for your AI workforce
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![OpenClaw](https://img.shields.io/badge/openclaw-compatible-green.svg)
-![Node](https://img.shields.io/badge/node-18%2B-green.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/eduardg7/openclaw-os/blob/main/LICENSE)
+[![Node](https://img.shields.io/badge/node-18%2B-green.svg)](https://nodejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue.svg)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black.svg)](https://nextjs.org/)
+[![Security](https://img.shields.io/badge/Security-0%20Vulnerabilities-brightgreen.svg)](https://github.com/eduardg7/openclaw-os/security)
+[![GitHub Release](https://img.shields.io/github/v/release/eduardg7/openclaw-os)](https://github.com/eduardg7/openclaw-os/releases/latest)
+[![GitHub Stars](https://img.shields.io/github/stars/eduardg7/openclaw-os?style=social)](https://github.com/eduardg7/openclaw-os/stargazers)
+
+[Getting Started](#-quick-start) • [Documentation](https://eduardg7.github.io/openclaw-os) • [Demo](#demo) • [Contributing](./.github/CONTRIBUTING.md) • [Community](#-community)
+
+</div>
+
+---
+
+## Overview
+
+OpenClaw OS provides a unified dashboard to manage, monitor, and coordinate your AI agents. Connect to your OpenClaw instance and get real-time insights into your AI workforce.
+
+### Key Features
+
+- 🤖 **Agent Management** - View and manage all AI agents with real-time sync
+- 📊 **Mission Control Dashboard** - Live stats, activity feed, and quick actions
+- 📋 **Task Tracking** - Monitor tasks across all projects with status updates
+- 🔄 **OpenClaw Integration** - Seamless sync with your OpenClaw instance
+- 🎨 **Modern UI** - Clean, responsive interface with dark mode support
+- ⚡ **Zero Config** - Auto-detect OpenClaw, works out of the box
+- 🐳 **Docker Ready** - Production deployment with one command
+- 🔒 **Secure** - 0 vulnerabilities, branch protection, security best practices
+
+---
 
 ## 📖 Documentation
 
-- **[User Guide](./docs/USER-GUIDE.md)** - Complete usage documentation
-- **[Contributing](./.github/CONTRIBUTING.md)** - How to contribute
-- **[Security Policy](./SECURITY.md)** - Security information
+| Resource | Description |
+|----------|-------------|
+| **[User Guide](https://eduardg7.github.io/openclaw-os/USER-GUIDE)** | Complete usage documentation |
+| **[API Reference](https://eduardg7.github.io/openclaw-os/api)** | API endpoints and integration |
+| **[Contributing](./.github/CONTRIBUTING.md)** | How to contribute to the project |
+| **[Changelog](./CHANGELOG.md)** | Version history and releases |
+| **[Security](./SECURITY.md)** | Security policy and reporting |
 
-## ✨ Features
-
-- 🤖 **Agent Management** - View and manage all your AI agents in one place
-- 📊 **Mission Control Dashboard** - Real-time overview of your AI operations
-- 📋 **Task Tracking** - Monitor tasks across all projects
-- 🔄 **OpenClaw Sync** - Automatically syncs with your OpenClaw instance
-- 🎨 **Modern UI** - Clean, responsive interface built with Next.js + shadcn/ui
-- ⚡ **Zero Config** - Works out of the box with sensible defaults
-- 🐳 **Docker Ready** - Production-ready Docker deployment
-- 🔒 **Secure** - 0 vulnerabilities, security best practices
+---
 
 ## 🚀 Quick Start
 

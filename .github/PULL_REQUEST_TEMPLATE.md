@@ -1,10 +1,12 @@
-## 📝 Description
+# Pull Request
 
-<!-- Provide a clear description of your changes -->
+## Description
 
-Fixes # (issue)
+<!-- Provide a clear and concise description of your changes -->
 
-## 🎯 Type of Change
+Fixes #(issue)
+
+## Type of Change
 
 <!-- Mark the relevant option with an 'x' -->
 
@@ -17,7 +19,7 @@ Fixes # (issue)
 - [ ] ⚡ Performance improvement
 - [ ] ✅ Test addition/update
 
-## 🧪 How Has This Been Tested?
+## How Has This Been Tested?
 
 <!-- Describe the tests you ran to verify your changes -->
 
@@ -25,17 +27,14 @@ Fixes # (issue)
 - [ ] Unit tests (`npm test`)
 - [ ] Linting (`npm run lint`)
 - [ ] Manual browser testing
+- [ ] Docker build test
 
 **Test Configuration:**
 - Node version:
 - OS:
 - Browser:
 
-## 📸 Screenshots (if applicable)
-
-<!-- Add screenshots to help explain your changes -->
-
-## ✅ Checklist
+## Checklist
 
 <!-- Mark completed items with an 'x' -->
 
@@ -49,10 +48,18 @@ Fixes # (issue)
 - [ ] Any dependent changes have been merged and published in downstream modules
 - [ ] I have checked my code and corrected any misspellings
 
-## 🔗 Related Issues
+## Screenshots (if applicable)
+
+<!-- Add screenshots to help explain your changes -->
+
+## Related Issues
 
 <!-- Link to any related issues here -->
 
-## 📝 Additional Notes
+## Additional Notes
 
 <!-- Add any additional notes or context about the PR here -->
+
+---
+
+**By submitting this pull request, I confirm that you can use, modify, copy, and redistribute this contribution, under the terms of your choice.**
